@@ -3,7 +3,7 @@ import time
 import random
 import logging
 
-from ColaFIFO import ColaFIFO
+from ColaFIFOsize import ColaFIFOsize
 
 logging.basicConfig(format='%(asctime)s.%(msecs)03d [%(threadName)s] - %(message)s', datefmt='%H:%M:%S', level=logging.INFO)
 
@@ -36,7 +36,7 @@ class Consumidor(threading.Thread):
 
 def main():
     # hilos = []
-    cola = ColaFIFO()
+    cola = ColaFIFOsize()
 
     productor = Productor(cola, 2)
     consumidor = Consumidor(cola, 1)
